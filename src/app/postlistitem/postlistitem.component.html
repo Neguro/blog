@@ -1,0 +1,20 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': getLoveIt() > 0,
+                'list-group-item-danger': getLoveIt() < 0}">
+
+  <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+    <div class="flex-grow-1">
+      <div class="subheading mb-3">{{ titre }}</div>
+      <p>
+        {{ contenu }}
+      </p>
+    </div>
+    <div class="flex-shrink-0"><span>{{ date | date:'short' }}</span></div>
+  </div>
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+    <button type="text" class="btn btn-success" (click)="clickLoveIt()">Love it !</button>
+  </div>
+  <div class="btn-group mr-2" role="group" aria-label="Second group">
+    <button type="text" class="btn btn-danger" (click)="clickDontLoveIt()">Don't love it</button>
+  </div>
+</li>
